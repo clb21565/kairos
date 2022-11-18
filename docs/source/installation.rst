@@ -1,4 +1,8 @@
-Welcome to the installation.... 
+hgt-support installation instructions
 =============================
 
-# to do... 
+**Recommended**:
+conda install
+
+conda create -n hgt_support -c bioconda hgt_support
+
