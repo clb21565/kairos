@@ -1,9 +1,5 @@
 # hgt-support
 
-Scripts: https://github.com/clb21565/hgt_support/blob/main/scripts/descriptions.MD
-
-Description:
-
 hgt-support is a pipeline for detecting horizontal gene transfer and distinguishing misassemblies from genuine structural variation in metagenome assemblies. At present, it has three major modules:
 
 ***hgt-support derep-detect***
