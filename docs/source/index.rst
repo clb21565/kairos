@@ -13,4 +13,4 @@ Contents
 .. toctree::
    
    installation
-   usage
+   derep-detect
