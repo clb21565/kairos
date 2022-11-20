@@ -1,0 +1,49 @@
+Nov-18 17:26:10.797 [main] DEBUG nextflow.cli.Launcher - $> nextflow blast.nf
+Nov-18 17:26:10.842 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.0
+Nov-18 17:26:10.922 [main] INFO  nextflow.cli.CmdRun - Launching `blast.nf` [big_monod] DSL2 - revision: a18b865117
+Nov-18 17:26:10.933 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/clb21565/.nextflow/plugins; core-plugins: nf-amazon@1.7.1,nf-azure@0.13.1,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Nov-18 17:26:10.935 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-18 17:26:10.943 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-18 17:26:10.944 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-18 17:26:10.946 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Nov-18 17:26:10.953 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-18 17:26:10.988 [main] DEBUG nextflow.Session - Session uuid: 8895f2ee-b823-4216-9181-0a652081f72e
+Nov-18 17:26:10.988 [main] DEBUG nextflow.Session - Run name: big_monod
+Nov-18 17:26:10.989 [main] DEBUG nextflow.Session - Executor pool size: 8
+Nov-18 17:26:11.020 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.0 build 5697
+  Created: 23-04-2022 18:00 UTC (14:00 EDT)
+  System: Linux 3.10.0-1062.18.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 156465@tinkercliffs2 [10.128.11.242]
+  CPUs: 8 - Mem: 32 GB (13.8 GB) - Swap: 16 GB (9.9 GB)
+Nov-18 17:26:11.070 [main] DEBUG nextflow.Session - Work-dir: /projects/ciwars/hgt_support/support/clb/hgt_support/modules/work [nfs]
+Nov-18 17:26:11.070 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /projects/ciwars/hgt_support/support/clb/hgt_support/modules/bin
+Nov-18 17:26:11.076 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-18 17:26:11.083 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-18 17:26:11.098 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-18 17:26:11.105 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Nov-18 17:26:11.300 [main] DEBUG nextflow.Session - Session start invoked
+Nov-18 17:26:11.768 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-18 17:26:11.782 [main] DEBUG nextflow.Session - Session aborted -- Cause: Missing workflow definition - DSL2 requires at least a workflow block in the main script
+Nov-18 17:26:11.789 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: Missing workflow definition - DSL2 requires at least a workflow block in the main script
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:188)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:203)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:334)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

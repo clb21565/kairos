@@ -1,0 +1,79 @@
+Nov-20 15:34:00.461 [main] DEBUG nextflow.cli.Launcher - $> nextflow runHGTsp1.nf --input test.fasta --outdir t
+Nov-20 15:34:00.542 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.0
+Nov-20 15:34:00.554 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/ciwars/hgt_support/support/clb/hgt_support/nextflow.config
+Nov-20 15:34:00.555 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/ciwars/hgt_support/support/clb/hgt_support/nextflow.config
+Nov-20 15:34:00.571 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-20 15:34:01.082 [main] INFO  nextflow.cli.CmdRun - Launching `runHGTsp1.nf` [confident_perlman] DSL2 - revision: bf6907f336
+Nov-20 15:34:01.091 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/clb21565/.nextflow/plugins; core-plugins: nf-amazon@1.7.1,nf-azure@0.13.1,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Nov-20 15:34:01.093 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-20 15:34:01.101 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-20 15:34:01.101 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-20 15:34:01.103 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Nov-20 15:34:01.110 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-20 15:34:01.144 [main] DEBUG nextflow.Session - Session uuid: 14f841b0-5c5d-409c-b346-fff9df6429ef
+Nov-20 15:34:01.144 [main] DEBUG nextflow.Session - Run name: confident_perlman
+Nov-20 15:34:01.144 [main] DEBUG nextflow.Session - Executor pool size: 8
+Nov-20 15:34:01.171 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.0 build 5697
+  Created: 23-04-2022 18:00 UTC (14:00 EDT)
+  System: Linux 3.10.0-1062.18.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 162120@tinkercliffs2 [10.128.11.242]
+  CPUs: 8 - Mem: 32 GB (8 GB) - Swap: 16 GB (9.9 GB)
+Nov-20 15:34:01.195 [main] DEBUG nextflow.Session - Work-dir: /projects/ciwars/hgt_support/support/clb/hgt_support/work [nfs]
+Nov-20 15:34:01.212 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-20 15:34:01.220 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-20 15:34:01.264 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-20 15:34:01.284 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Nov-20 15:34:01.485 [main] DEBUG nextflow.Session - Session start invoked
+Nov-20 15:34:01.717 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-20 15:34:01.731 [main] INFO  nextflow.Nextflow -          h g t s u p p o r t - an N F   P I P E L I N E
+==================================================================================================
+ Input: /projects/ciwars/hgt_support/support/clb/hgt_support/test.fasta	
+ Output Prefix: smalltest
+ Work Directory: /projects/ciwars/hgt_support/support/clb/hgt_support/t
+ Script Directory: /projects/ciwars/hgt_support/support/clb/hgt_support
+==================================================================================================
+         
+Nov-20 15:34:02.073 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-20 15:34:02.073 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-20 15:34:02.076 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Nov-20 15:34:02.080 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=32 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Nov-20 15:34:02.145 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-20 15:34:02.145 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-20 15:34:02.149 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-20 15:34:02.149 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-20 15:34:02.152 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-20 15:34:02.152 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-20 15:34:02.162 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-20 15:34:02.162 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-20 15:34:02.164 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: support_derep, flow3:mmseqs_prots, flow1:blastdb, pprodigal, mmseqs_contigs, flow1:mmseqs_contigs, flow4:support_derep, flow2:pprodigal, blastdb, mmseqs_prots
+Nov-20 15:34:02.165 [main] DEBUG nextflow.Session - Ignite dataflow network (6)
+Nov-20 15:34:02.165 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flow1:blastdb
+Nov-20 15:34:02.165 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flow1:mmseqs_contigs
+Nov-20 15:34:02.166 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flow2:pprodigal
+Nov-20 15:34:02.166 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flow3:mmseqs_prots
+Nov-20 15:34:02.170 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flow4:support_derep
+Nov-20 15:34:02.170 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Nov-20 15:34:02.170 [main] DEBUG nextflow.Session - Session await
+Nov-20 15:34:02.256 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-20 15:34:02.259 [Task submitter] INFO  nextflow.Session - [5e/5e7245] Submitted process > flow1:mmseqs_contigs
+Nov-20 15:34:02.268 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-20 15:34:02.315 [Task submitter] INFO  nextflow.Session - [c6/7f35aa] Submitted process > flow1:blastdb
+Nov-20 15:34:03.042 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: flow1:blastdb; status: COMPLETED; exit: 0; error: -; workDir: /projects/ciwars/hgt_support/support/clb/hgt_support/work/c6/7f35aa901317b8cd957b5e31e90758]
+Nov-20 15:34:27.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: flow1:mmseqs_contigs; status: COMPLETED; exit: 0; error: -; workDir: /projects/ciwars/hgt_support/support/clb/hgt_support/work/5e/5e7245ed8d196de7cc3cc175b3c05f]
+Nov-20 15:34:27.180 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-20 15:34:27.180 [Task submitter] INFO  nextflow.Session - [9c/2b16be] Submitted process > flow2:pprodigal
+Nov-20 15:34:27.884 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: flow2:pprodigal; status: COMPLETED; exit: 0; error: -; workDir: /projects/ciwars/hgt_support/support/clb/hgt_support/work/9c/2b16be310033882871fbd9ee8e61b6]
+Nov-20 15:34:27.898 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-20 15:34:27.898 [Task submitter] INFO  nextflow.Session - [bd/083c7c] Submitted process > flow3:mmseqs_prots
+Nov-20 15:34:42.598 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: flow3:mmseqs_prots; status: COMPLETED; exit: 0; error: -; workDir: /projects/ciwars/hgt_support/support/clb/hgt_support/work/bd/083c7cbb568f1d14067af4eacff167]
+Nov-20 15:34:42.617 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-20 15:34:42.617 [Task submitter] INFO  nextflow.Session - [94/93a4c7] Submitted process > flow4:support_derep (1)
+Nov-20 15:34:43.653 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: flow4:support_derep (1); status: COMPLETED; exit: 0; error: -; workDir: /projects/ciwars/hgt_support/support/clb/hgt_support/work/94/93a4c70bb90f8528bad04195d1c25c]
+Nov-20 15:34:43.658 [main] DEBUG nextflow.Session - Session await > all process finished
+Nov-20 15:34:43.753 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-20 15:34:43.759 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=41.6s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Nov-20 15:34:44.073 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-20 15:34:44.086 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

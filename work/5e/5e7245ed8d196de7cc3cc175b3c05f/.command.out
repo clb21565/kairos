@@ -1,0 +1,375 @@
+hello /projects/ciwars/hgt_support/support/clb/hgt_support
+Create directory contigs99.tmp
+easy-cluster test.fasta contigs99 contigs99.tmp --min-seq-id 0.99 -c 0.6 --cov-mode 1 
+
+MMseqs Version:                     	13.45111
+Substitution matrix                 	nucl:nucleotide.out,aa:blosum62.out
+Seed substitution matrix            	nucl:nucleotide.out,aa:VTML80.out
+Sensitivity                         	4
+k-mer length                        	0
+k-score                             	2147483647
+Alphabet size                       	nucl:5,aa:21
+Max sequence length                 	65535
+Max results per query               	20
+Split database                      	0
+Split mode                          	2
+Split memory limit                  	0
+Coverage threshold                  	0.6
+Coverage mode                       	1
+Compositional bias                  	1
+Diagonal scoring                    	true
+Exact k-mer matching                	0
+Mask residues                       	1
+Mask lower case residues            	0
+Minimum diagonal score              	15
+Include identical seq. id.          	false
+Spaced k-mers                       	1
+Preload mode                        	0
+Pseudo count a                      	1
+Pseudo count b                      	1.5
+Spaced k-mer pattern                	
+Local temporary path                	
+Threads                             	128
+Compressed                          	0
+Verbosity                           	3
+Add backtrace                       	false
+Alignment mode                      	3
+Alignment mode                      	0
+Allow wrapped scoring               	false
+E-value threshold                   	0.001
+Seq. id. threshold                  	0.99
+Min alignment length                	0
+Seq. id. mode                       	0
+Alternative alignments              	0
+Max reject                          	2147483647
+Max accept                          	2147483647
+Score bias                          	0
+Realign hits                        	false
+Realign score bias                  	-0.2
+Realign max seqs                    	2147483647
+Gap open cost                       	nucl:5,aa:11
+Gap extension cost                  	nucl:2,aa:1
+Zdrop                               	40
+Rescore mode                        	0
+Remove hits by seq. id. and coverage	false
+Sort results                        	0
+Cluster mode                        	0
+Max connected component depth       	1000
+Similarity type                     	2
+Single step clustering              	false
+Cascaded clustering steps           	3
+Cluster reassign                    	false
+Remove temporary files              	true
+Force restart with latest tmp       	false
+MPI runner                          	
+k-mers per sequence                 	21
+Scale k-mers per sequence           	nucl:0.200,aa:0.000
+Adjust k-mer length                 	false
+Shift hash                          	67
+Include only extendable             	false
+Skip repeating k-mers               	false
+Database type                       	0
+Shuffle input database              	true
+Createdb mode                       	1
+Write lookup file                   	0
+Offset of numeric ids               	0
+
+createdb test.fasta contigs99.tmp/14488023827396560364/input --dbtype 0 --shuffle 1 --createdb-mode 1 --write-lookup 0 --id-offset 0 --compressed 0 -v 3 
+
+Shuffle database cannot be combined with --createdb-mode 0
+We recompute with --shuffle 0
+Converting sequences
+[
+Time for merging to input_h: 0h 0m 0s 2ms
+Time for merging to input: 0h 0m 0s 2ms
+Database type: Nucleotide
+Time for processing: 0h 0m 0s 16ms
+Create directory contigs99.tmp/14488023827396560364/clu_tmp
+cluster contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu contigs99.tmp/14488023827396560364/clu_tmp --max-seqs 20 -c 0.6 --cov-mode 1 --spaced-kmer-mode 1 --alignment-mode 3 -e 0.001 --min-seq-id 0.99 --remove-tmp-files 1 
+
+Set cluster sensitivity to -s 1.000000
+Set cluster mode GREEDY MEM
+Set cluster iterations to 1
+linclust contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust --cluster-mode 3 --max-iterations 1000 --similarity-type 2 --threads 128 --compressed 0 -v 3 --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.001 --min-seq-id 0.99 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0.6 --cov-mode 1 --max-seq-len 10000 --comp-bias-corr 0 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --alph-size nucl:5,aa:21 --kmer-per-seq 21 --spaced-kmer-mode 1 --kmer-per-seq-scale nucl:0.200,aa:0.000 --adjust-kmer-len 0 --mask 1 --mask-lower-case 0 -k 0 --hash-shift 67 --split-memory-limit 0 --include-only-extendable 0 --ignore-multi-kmer 0 --rescore-mode 0 --filter-hits 0 --sort-results 0 --remove-tmp-files 1 --force-reuse 0 
+
+kmermatcher contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref --sub-mat nucl:nucleotide.out,aa:blosum62.out --alph-size nucl:5,aa:21 --min-seq-id 0.99 --kmer-per-seq 21 --spaced-kmer-mode 1 --kmer-per-seq-scale nucl:0.200,aa:0.000 --adjust-kmer-len 0 --mask 1 --mask-lower-case 0 --cov-mode 1 -k 0 -c 0.6 --max-seq-len 10000 --hash-shift 67 --split-memory-limit 0 --include-only-extendable 0 --ignore-multi-kmer 0 --threads 128 --compressed 0 -v 3 
+
+kmermatcher contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref --sub-mat nucl:nucleotide.out,aa:blosum62.out --alph-size nucl:5,aa:21 --min-seq-id 0.99 --kmer-per-seq 21 --spaced-kmer-mode 1 --kmer-per-seq-scale nucl:0.200,aa:0.000 --adjust-kmer-len 0 --mask 1 --mask-lower-case 0 --cov-mode 1 -k 0 -c 0.6 --max-seq-len 10000 --hash-shift 67 --split-memory-limit 0 --include-only-extendable 0 --ignore-multi-kmer 0 --threads 128 --compressed 0 -v 3 
+
+Database size: 10 type: Nucleotide
+
+Generate k-mers list for 1 split
+[=================================================================] 10 0s 206ms
+
+Adjusted k-mer length 17
+Sort kmer 0h 0m 0s 2ms
+Sort by rep. sequence 0h 0m 0s 0ms
+Time for fill: 0h 0m 0s 0ms
+Time for merging to pref: 0h 0m 0s 2ms
+Time for processing: 0h 0m 0s 747ms
+rescorediagonal contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_rescore1 --sub-mat nucl:nucleotide.out,aa:blosum62.out --rescore-mode 0 --wrapped-scoring 0 --filter-hits 0 -e 0.001 -c 0.6 -a 0 --cov-mode 1 --min-seq-id 0.99 --min-aln-len 0 --seq-id-mode 0 --add-self-matches 0 --sort-results 0 --db-load-mode 0 --threads 128 --compressed 0 -v 3 
+
+========================[============================] =============10 0s 95ms
+Time for merging to pref_rescore1: 0h 0m 0s 195ms
+Time for processing: 0h 0m 0s 719ms
+clust contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_rescore1 contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pre_clust --cluster-mode 3 --max-iterations 1000 --similarity-type 2 --threads 128 --compressed 0 -v 3 
+
+Clustering mode: Greedy Low Mem
+Total time: 0h 0m 0s 406ms
+
+Size of the sequence database: 10
+Size of the alignment database: 10
+Number of clusters: 10
+
+Writing results 0h 0m 0s 0ms
+Time for merging to pre_clust: 0h 0m 0s 7ms
+Time for processing: 0h 0m 0s 561ms
+createsubdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/order_redundancy contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy -v 3 --subdb-mode 1 
+
+Time for merging to input_step_redundancy: 0h 0m 0s 2ms
+Time for processing: 0h 0m 0s 14ms
+createsubdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/order_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter1 -v 3 --subdb-mode 1 
+
+Time for merging to pref_filter1: 0h 0m 0s 2ms
+Time for processing: 0h 0m 0s 12ms
+filterdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter1 contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter2 --filter-file contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/order_redundancy --threads 128 --compressed 0 -v 3 
+
+Filtering using file(s)
+[=================================================================] 10 0s 60ms
+Time for merging to pref_filter2: 0h 0m 0s 185ms
+Time for processing: 0h 0m 0s 666ms
+align contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter2 contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/aln --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.001 --min-seq-id 0.99 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0.6 --cov-mode 1 --max-seq-len 10000 --comp-bias-corr 0 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 128 --compressed 0 -v 3 
+
+Compute score, coverage and sequence identity
+Query database size: 10 type: Nucleotide
+Target database size: 10 type: Nucleotide
+Calculation of alignments
+[=================================================================] 10 0s 1ms
+Time for merging to aln: 0h 0m 0s 17ms
+12 alignments calculated
+10 sequence pairs passed the thresholds (0.833333 of overall calculated)
+1.000000 hits per query sequence
+Time for processing: 0h 0m 0s 117ms
+clust contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/aln contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/clust --cluster-mode 3 --max-iterations 1000 --similarity-type 2 --threads 128 --compressed 0 -v 3 
+
+Clustering mode: Greedy Low Mem
+Total time: 0h 0m 0s 339ms
+
+Size of the sequence database: 10
+Size of the alignment database: 10
+Number of clusters: 10
+
+Writing results 0h 0m 0s 0ms
+Time for merging to clust: 0h 0m 0s 3ms
+Time for processing: 0h 0m 0s 450ms
+mergeclusters contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pre_clust contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/clust --threads 128 --compressed 0 -v 3 
+
+Clustering step 1
+[=================================================================] 10 0s 183ms
+Clustering step 2
+[=================================================================] 10 0s 504ms
+Write merged clustering
+[=================================================================] 10 0s 991ms
+Time for merging to clu_redundancy: 0h 0m 0s 187ms
+Time for processing: 0h 0m 1s 390ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter1 -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_rescore1 -v 3 
+
+Time for processing: 0h 0m 0s 85ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pre_clust -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/input_step_redundancy_h -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/pref_filter2 -v 3 
+
+Time for processing: 0h 0m 0s 90ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/aln -v 3 
+
+Time for processing: 0h 0m 0s 8ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/linclust/358037977048712323/clust -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+createsubdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu_redundancy contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy -v 3 --subdb-mode 1 
+
+Time for merging to input_step_redundancy: 0h 0m 0s 3ms
+Time for processing: 0h 0m 0s 14ms
+extractframes contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs --forward-frames 1 --reverse-frames 1 --create-lookup 0 --threads 128 --compressed 0 -v 3 
+
+[=================================================================] 10 0s 50ms
+Time for merging to query_seqs_h: 0h 0m 0s 262ms
+Time for merging to query_seqs: 0h 0m 0s 266ms
+Time for processing: 0h 0m 1s 227ms
+prefilter contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref --sub-mat nucl:nucleotide.out,aa:blosum62.out --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -s 1 -k 15 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seq-len 10000 --max-seqs 20 --split 0 --split-mode 2 --split-memory-limit 0 -c 0.6 --cov-mode 1 --comp-bias-corr 0 --diag-score 0 --exact-kmer-matching 1 --mask 1 --mask-lower-case 0 --min-ungapped-score 60 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca 1 --pcb 1.5 --threads 128 --compressed 0 -v 3 
+
+Query database size: 20 type: Nucleotide
+Estimated memory consumption: 8G
+Target database size: 10 type: Nucleotide
+Index table k-mer threshold: 0 at k-mer size 15 
+Index table: counting k-mers
+[=================================================================] 10 0s 125ms
+Index table: Masked residues: 224
+Index table: fill
+[=================================================================] 10 0s 136ms
+Index statistics
+Entries:          83432
+DB size:          8192 MB
+Avg k-mer size:   0.000078
+Top 10 k-mers
+    GTGTATCTCGCCCAA	2
+    ACCCGTCTCATTCTA	2
+    GGTGCATCTCTGCGA	2
+    CGCGCTTCTGTGTGA	2
+    GTCTTTCGGTCAAAC	2
+    TTCCTGCTCACTTAC	2
+    GTCTCCCGGCGCCCC	2
+    GCCTGCCAATTTTCC	2
+    GCCGTGCGCTCGTCC	2
+    CCGGCCAGTGCTGCC	2
+Time for index table init: 0h 0m 10s 171ms
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 0
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 20
+Target db start 1 to 10
+=======[==========================================================] 20 0s 31ms
+
+0.994772 k-mers per position
+4187 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+0 sequences passed prefiltering per query sequence
+1 median result list length
+10 sequences with 0 size result lists
+Time for merging to pref: 0h 0m 0s 33ms
+Time for processing: 0h 0m 11s 15ms
+rescorediagonal contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_ungapped --sub-mat nucl:nucleotide.out,aa:blosum62.out --rescore-mode 2 --wrapped-scoring 0 --filter-hits 0 -e 0.001 -c 0.6 -a 0 --cov-mode 1 --min-seq-id 0.99 --min-aln-len 0 --seq-id-mode 0 --add-self-matches 0 --sort-results 0 --db-load-mode 0 --threads 128 --compressed 0 -v 3 
+
+==============================[===================================] 20 0s 62ms
+Time for merging to aln_ungapped: 0h 0m 0s 202ms
+Time for processing: 0h 0m 0s 730ms
+subtractdbs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_ungapped contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref_subtract --threads 128 --compressed 0 -v 3 
+
+subtractdbs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_ungapped contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref_subtract --threads 128 --compressed 0 -v 3 
+
+Remove contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_ungapped ids from contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref
+=[================================================================] 20 0s 83ms
+Time for merging to pref_subtract: 0h 0m 0s 191ms
+Time for processing: 0h 0m 0s 754ms
+align contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/pref_subtract contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_gapped --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 3 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.001 --min-seq-id 0.99 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0.6 --cov-mode 1 --max-seq-len 10000 --comp-bias-corr 0 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 128 --compressed 0 -v 3 
+
+Compute score, coverage and sequence identity
+Query database size: 20 type: Nucleotide
+Target database size: 10 type: Nucleotide
+Calculation of alignments
+[=================================================================] 20 0s 1ms
+Time for merging to aln_gapped: 0h 0m 0s 30ms
+0 alignments calculated
+0 sequence pairs passed the thresholds
+0.000000 hits per query sequence
+Time for processing: 0h 0m 0s 151ms
+concatdbs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_ungapped contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_gapped contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln --preserve-keys --take-larger-entry --threads 128 --compressed 0 -v 3 
+
+=[================================================================] 20 0s 65ms
+[=================================================================] 20 0s 359ms
+Time for merging to aln: 0h 0m 0s 270ms
+Time for processing: 0h 0m 1s 14ms
+offsetalignment contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_off --chain-alignments 0 --merge-query 1 --search-type 3 --threads 128 --compressed 0 --db-load-mode 0 -v 3 
+
+Computing ORF lookup
+Computing contig offsets
+Computing contig lookup
+Time for contig lookup: 0h 0m 0s 0ms
+Writing results to: contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_off
+[=================================================================] 10 0s 0ms
+
+Time for merging to aln_off: 0h 0m 0s 38ms
+Time for processing: 0h 0m 0s 85ms
+clust contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_off contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu --cluster-mode 3 --max-iterations 1000 --similarity-type 2 --threads 128 --compressed 0 -v 3 
+
+Clustering mode: Greedy Low Mem
+Total time: 0h 0m 0s 475ms
+
+Size of the sequence database: 10
+Size of the alignment database: 10
+Number of clusters: 10
+
+Writing results 0h 0m 0s 0ms
+Time for merging to clu: 0h 0m 0s 2ms
+Time for processing: 0h 0m 0s 502ms
+mergeclusters contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu_redundancy contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu --threads 128 --compressed 0 -v 3 
+
+Clustering step 1
+[=================================================================] 10 0s 39ms
+Clustering step 2
+[=================================================================] 10 0s 345ms
+Write merged clustering
+[=================================================================] 10 0s 735ms
+Time for merging to clu: 0h 0m 0s 186ms
+Time for processing: 0h 0m 1s 207ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/query_seqs -v 3 
+
+Time for processing: 0h 0m 0s 3ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu_redundancy -v 3 
+
+Time for processing: 0h 0m 0s 91ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/input_step_redundancy -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/perf -v 3 
+
+Time for processing: 0h 0m 0s 0ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/aln_off -v 3 
+
+Time for processing: 0h 0m 0s 16ms
+rmdb contigs99.tmp/14488023827396560364/clu_tmp/12237244649090813595/clu -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+createtsv contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu contigs99.tmp/14488023827396560364/cluster.tsv --threads 128 -v 3 
+
+Time for merging to cluster.tsv: 0h 0m 0s 273ms
+Time for processing: 0h 0m 0s 840ms
+result2repseq contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu contigs99.tmp/14488023827396560364/clu_rep --db-load-mode 0 --compressed 0 --threads 128 -v 3 
+
+[=================================================================] 10 0s 8ms
+Time for merging to clu_rep: 0h 0m 0s 275ms
+Time for processing: 0h 0m 0s 700ms
+result2flat contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_rep contigs99.tmp/14488023827396560364/rep_seq.fasta --use-fasta-header -v 3 
+
+Time for processing: 0h 0m 0s 7ms
+createseqfiledb contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu contigs99.tmp/14488023827396560364/clu_seqs --threads 128 -v 3 
+
+[=================================================================] 10 0s 32ms
+Time for merging to clu_seqs: 0h 0m 0s 192ms
+Time for processing: 0h 0m 0s 690ms
+result2flat contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/input contigs99.tmp/14488023827396560364/clu_seqs contigs99.tmp/14488023827396560364/all_seqs.fasta -v 3 
+
+Time for processing: 0h 0m 0s 56ms
+rmdb contigs99.tmp/14488023827396560364/input -v 3 
+
+Time for processing: 0h 0m 0s 3ms
+rmdb contigs99.tmp/14488023827396560364/input_h -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu_seqs -v 3 
+
+Time for processing: 0h 0m 0s 90ms
+rmdb contigs99.tmp/14488023827396560364/clu_rep -v 3 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb contigs99.tmp/14488023827396560364/clu -v 3 
+
+Time for processing: 0h 0m 0s 90ms

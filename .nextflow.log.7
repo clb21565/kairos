@@ -1,0 +1,93 @@
+Nov-20 15:10:39.927 [main] DEBUG nextflow.cli.Launcher - $> nextflow runHGTsp1.nf --input test.fasta --outdir t2
+Nov-20 15:10:40.006 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.0
+Nov-20 15:10:40.019 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /projects/ciwars/hgt_support/support/clb/hgt_support/nextflow.config
+Nov-20 15:10:40.020 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /projects/ciwars/hgt_support/support/clb/hgt_support/nextflow.config
+Nov-20 15:10:40.036 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-20 15:10:40.561 [main] INFO  nextflow.cli.CmdRun - Launching `runHGTsp1.nf` [festering_wozniak] DSL2 - revision: d5c6ce16a3
+Nov-20 15:10:40.571 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/clb21565/.nextflow/plugins; core-plugins: nf-amazon@1.7.1,nf-azure@0.13.1,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Nov-20 15:10:40.572 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-20 15:10:40.581 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-20 15:10:40.581 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-20 15:10:40.584 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Nov-20 15:10:40.590 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-20 15:10:40.627 [main] DEBUG nextflow.Session - Session uuid: 66d4514d-282c-49cf-97e6-acc2e62e8733
+Nov-20 15:10:40.627 [main] DEBUG nextflow.Session - Run name: festering_wozniak
+Nov-20 15:10:40.627 [main] DEBUG nextflow.Session - Executor pool size: 8
+Nov-20 15:10:40.654 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.0 build 5697
+  Created: 23-04-2022 18:00 UTC (14:00 EDT)
+  System: Linux 3.10.0-1062.18.1.el7.x86_64
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 124156@tinkercliffs2 [10.128.11.242]
+  CPUs: 8 - Mem: 32 GB (8 GB) - Swap: 16 GB (9.9 GB)
+Nov-20 15:10:40.677 [main] DEBUG nextflow.Session - Work-dir: /projects/ciwars/hgt_support/support/clb/hgt_support/work [nfs]
+Nov-20 15:10:40.694 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-20 15:10:40.701 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-20 15:10:40.747 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-20 15:10:40.764 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Nov-20 15:10:40.960 [main] DEBUG nextflow.Session - Session start invoked
+Nov-20 15:10:41.203 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-20 15:10:41.219 [main] INFO  nextflow.Nextflow -          h g t s u p p o r t - an N F   P I P E L I N E
+==================================================================================================
+ Input: /projects/ciwars/hgt_support/support/clb/hgt_support/test.fasta	
+ Output Prefix: smalltest
+ Work Directory: /projects/ciwars/hgt_support/support/clb/hgt_support/t2
+ Script Directory: /projects/ciwars/hgt_support/support/clb/hgt_support
+==================================================================================================
+         
+Nov-20 15:10:41.504 [main] DEBUG nextflow.Session - Session aborted -- Cause: Access to 'mmseqs_contigs.out' is undefined since the process 'mmseqs_contigs' has not been invoked before accessing the output attribute
+Nov-20 15:10:41.513 [main] ERROR nextflow.cli.Launcher - Access to 'mmseqs_contigs.out' is undefined since the process 'mmseqs_contigs' has not been invoked before accessing the output attribute
+nextflow.exception.ScriptRuntimeException: Access to 'mmseqs_contigs.out' is undefined since the process 'mmseqs_contigs' has not been invoked before accessing the output attribute
+	at nextflow.script.ProcessDef.getOut(ProcessDef.groovy:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.MethodMetaProperty$GetBeanMethodMetaProperty.getProperty(MethodMetaProperty.java:76)
+	at org.codehaus.groovy.runtime.callsite.GetEffectivePogoPropertySite.getProperty(GetEffectivePogoPropertySite.java:85)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGetProperty(AbstractCallSite.java:329)
+	at Script_82fc4e26$_runScript_closure1.doCall(Script_82fc4e26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at nextflow.script.WorkflowDef.<init>(WorkflowDef.groovy:64)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:295)
+	at nextflow.script.BaseScript.workflow(BaseScript.groovy:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at Script_82fc4e26.runScript(Script_82fc4e26:34)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:203)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:334)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)
