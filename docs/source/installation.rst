@@ -3,9 +3,6 @@ Installation
 
 .. _installation:
 
-Installation
-------------
-
 hgt-support requires nextflow and several bioinformatics packages. The dependencies can be installed through conda, as in the following command: 
 
 .. code-block:: console
