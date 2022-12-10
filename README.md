@@ -16,12 +16,6 @@ For a set of contigs, identify identical open reading frames (orfs). Contigs wit
 
 We define putative horizontal gene transfers as contigs with shared genes but different taxonomic assignments. For example, two contigs sharing an idential arg ( $arg_x$ ) would have an HGT under the following conditions: 
 
->$contig_1 \in taxa_1,arg_x$
->
->$contig_2 \in taxa_2,arg_x$
->
->$hgt_{1,2} = contig_1 \notin  contig_2 =taxa_1,taxa_2$
-
 User is required to provide taxonomic assignments. I typically use mmseqs taxonomy with gtdb as the underlying taxonomic database.
 
 ## hgt-support support
