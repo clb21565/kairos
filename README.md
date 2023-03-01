@@ -18,6 +18,8 @@ We define putative horizontal gene transfers as contigs with shared genes but di
 
 User is required to provide taxonomic assignments. I typically use mmseqs taxonomy with gtdb as the underlying taxonomic database.
 
+nextflow run runHGTsp1.nf --input test.fasta --outdir testrun
+
 ## hgt-support support
 
 For a set of potential hgts or recombination events, determine the presence/absence in metagenomes by aligning to distinguishing loci in assemblies.
