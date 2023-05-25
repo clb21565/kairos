@@ -1,16 +1,14 @@
-# hgt-support
+# HGT-support
 
 hgt-support is a pipeline for detecting horizontal gene transfer and distinguishing misassemblies from genuine structural variation in metagenome assemblies. At present, it has three major modules:
 
-***hgt-support derep-detect***
+***HGT-support derep-detect***
 
-***hgt-support visualize***
-
-***hgt-support support***
+***HGT-support assess***
 
 Currently draft versions of the hgt-support derep-detect and support pipeline are implemented in nextflow.
 
-## hgt-support derep-detect
+## HGT-support derep-detect
 
 For a set of contigs, identify identical open reading frames (orfs). Contigs with identical orfs but different taxonomic assignments are putative horizontal gene transfers. Optionally, quantify the number of dereplicated contexts of shared orfs. 
 
@@ -18,12 +16,12 @@ We define putative horizontal gene transfers as contigs with shared genes but di
 
 User is required to provide taxonomic assignments. I typically use mmseqs taxonomy with gtdb as the underlying taxonomic database.
 
-nextflow run runHGTsp1.nf --input test.fasta --outdir testrun
+nextflow HGTsp_dd.nf --input test.fasta --outdir testrun
 
-## hgt-support support
+nextflow HGTsp_as.nf --input test.fasta --outdir testrun --interleaved_fastq test1.fq.gz test2.fq.gz test3.fq.gz --sample_metadata test_metadata.tsv
 
-For a set of potential hgts or recombination events, determine the presence/absence in metagenomes by aligning to distinguishing loci in assemblies.
+Visualization is performed using clinker. Note it becomes difficult to visualize many contigs at once. 
 
-## hgt-support visualize
+## HGT-support assess
 
-For a set of contigs, visualize synteny using prokka and clinker. Warning: it becomes very hard to visualize >50 contigs. 
+For a set of potential hgts or recombination events, determine the presence/absence in metagenomes by aligning to distinguishing boundary regions extracted from contigs.
