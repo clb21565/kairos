@@ -1,14 +1,14 @@
-# HGT-support
+# Kairos
 
-hgt-support is a pipeline for detecting horizontal gene transfer and distinguishing misassemblies from genuine structural variation in metagenome assemblies. At present, it has three major modules:
+Kairos is a nextflow pipeline for detecting horizontal gene transfer, distinguishing misassemblies from genuine structural variation, and inferring _in situ__ horizontal gene transfer from metagenomes and assemblies. At present, it has two main workflows:
 
-***HGT-support derep-detect***
+***kairos derep-detect***
 
-***HGT-support assess***
+***kairos assess***
 
-Currently draft versions of the hgt-support derep-detect and support pipeline are implemented in nextflow.
+Currently draft versions of the Kairos derep-detect and Kairos assess workflows are implemented in nextflow.
 
-## HGT-support derep-detect
+## Kairos derep-detect
 
 For a set of contigs, identify identical open reading frames (orfs). Contigs with identical orfs but different taxonomic assignments are putative horizontal gene transfers. Optionally, quantify the number of dereplicated contexts of shared orfs. 
 
@@ -16,12 +16,12 @@ We define putative horizontal gene transfers as contigs with shared genes but di
 
 User is required to provide taxonomic assignments. I typically use mmseqs taxonomy with gtdb as the underlying taxonomic database.
 
-nextflow HGTsp_dd.nf --input test.fasta --outdir testrun
+nextflow kairos-dd.nf --input test.fasta --taxa taxadf.tsv --outdir testrun 
 
-nextflow HGTsp_as.nf --input test.fasta --outdir testrun --interleaved_fastq test1.fq.gz test2.fq.gz test3.fq.gz --sample_metadata test_metadata.tsv
+nextflow kairos-asses.nf --input test.fasta --outdir testrun --interleaved_fastq test1.fq.gz test2.fq.gz test3.fq.gz --sample_metadata test_metadata.tsv
 
 Visualization is performed using clinker. Note it becomes difficult to visualize many contigs at once. 
 
-## HGT-support assess
+## Kairos assess
 
 For a set of potential hgts or recombination events, determine the presence/absence in metagenomes by aligning to distinguishing boundary regions extracted from contigs.
