@@ -1,6 +1,6 @@
 # Kairos
 
-Kairos is a nextflow pipeline for detecting horizontal gene transfer, distinguishing misassemblies from genuine structural variation, and inferring _in situ__ horizontal gene transfer from metagenomes and assemblies. At present, it has two main workflows:
+Kairos is a nextflow pipeline for detecting horizontal gene transfer, distinguishing misassemblies from genuine structural variation, and inferring _in situ_ horizontal gene transfer from metagenomes and assemblies. At present, it has two main workflows:
 
 ***kairos derep-detect***
 
