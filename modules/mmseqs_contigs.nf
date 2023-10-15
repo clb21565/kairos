@@ -6,7 +6,8 @@ process mmseqs_contigs {
 	path 'contigs99_rep_seq.fasta',		emit : rep
         path 'contigs99*',      		emit : contigs99
         """
-        echo hello $PWD
+        source activate hgt_support
+	echo hello $PWD
 	mmseqs easy-cluster $fasta contigs99 contigs99.tmp --min-seq-id 0.99 -c 0.6 --cov-mode 1
         """
 }

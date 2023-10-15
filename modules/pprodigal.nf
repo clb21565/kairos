@@ -6,6 +6,7 @@ process pprodigal {
 	output:
 	path '*',			emit:orf
 	"""
+	source activate hgt_support
 	cp $fasta $orfs
 	prodigal -q -i $fasta -a ${orfs}.faa -p meta
 	"""
