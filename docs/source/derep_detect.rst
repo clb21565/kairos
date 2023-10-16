@@ -1,4 +1,4 @@
-KAIROS derep-detect
+Kairos derep-detect
 =====
 
 .. _Kairos derep-detect:
