@@ -13,5 +13,5 @@ Contents
 .. toctree::
    
    installation
-   Kairos derep-detect
-   Kairos assess
+   derep_detect
+   assess
