@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'hgt-support'
-copyright = '2022, Brown'
+project = 'kairos'
+copyright = '2023, Brown'
 author = 'Connor Brown'
 
 release = '0.1'
