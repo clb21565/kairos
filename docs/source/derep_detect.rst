@@ -11,7 +11,14 @@ see :doc:`installation` for installing
 
 description
 ------------
-Kairos assess detects identical genes in distinct genetic contexts. Kairos derep-detect identifies identical orfs in contigs and assesses their redundancy based on the proportion of orfs that are shared to those that are unique. Putative HGTs are those events where identical orfs occur in two contigs with differing taxonomic assignment. The contig-centred approach has advantages and drawbacks. For example, metagenome assembled genome (MAG)-based methods will better ensure the taxonomic inferences and, theoretically, could provide a nearly database-independent assessment of taxonomic differences through independent phylogenomic analyses. However, it remains very difficult to correctly bin contigs derived from the accessory (i.e., strain specific) genome due to differences in the coverage profiles incurred by metagenomes with co-occurring microbial strains.  Further, the accessory genome of many bacterial species would include genes most likely to be exchanged by HGT. Thus, using contig taxonomic assignments eliminates this loss of information. On the other hand, taxonomic information contained in contigs can be misleading due to the mosaic nature of bacterial genomes. A potential compromise to explore is using information from MAGs to guide the taxonomic classification of the contig. This would best be explored with a validation dataset including species of ground truth. 
+
+.. image:: hgt_scoring.png
+  :width: 400
+  :alt: identification and scoring of putative HGTs using contigs
+
+
+Kairos assess detects identical genes in distinct genetic contexts. Kairos derep-detect identifies identical orfs in contigs and assesses their redundancy based on the proportion of orfs that are shared to those that are unique. Putative HGTs are those events where identical orfs occur in two contigs with differing taxonomic assignment. Potential HGTs are scored based on whether the putatively transfered gene is a target gene and/or co-localized with an MGE hallmark gene. 
+
 
 input
 ------------
