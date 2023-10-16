@@ -18,6 +18,13 @@ Description
 
 Kairos assess detects identical genes in distinct genetic contexts. Kairos derep-detect identifies identical orfs in contigs and assesses their redundancy based on the proportion of orfs that are shared to those that are unique. Putative HGTs are those events where identical orfs occur in two contigs with differing taxonomic assignment. Potential HGTs are scored based on whether the putatively transfered gene is a target gene and/or co-localized with an MGE hallmark gene. 
 
+Quick Start
+===============================
+To run derep-detect:
+
+.. code-block:: console
+
+   (.venv) $ nextflow kairos-dd.nf --max_cpus 128 --max_overlap 0.5 --input_contigs input.fasta --taxa_df kairos/taxadf.tsv --outdir output --target_database kairos/deeparg.fasta --MGE_database kairos/mobileOG-db_beatrix-1.6.All.faa
 
 Input 
 ===============================
@@ -118,6 +125,10 @@ Table 1. Output files and descriptions for Kairos derep-detect.
 +----------------------------------+------------------------------------------+
 | **Output File**                  | **Description**                          |
 +----------------------------------+------------------------------------------+
+| *_target_dmnd.tsv                | Diamond table of target matches          |
++----------------------------------+------------------------------------------+
+| *_MGE_dmnd.tsv                   | Diamond table of MGE matches             |
++----------------------------------+------------------------------------------+
 | phylum_HGT.csv                   | Phylum-level HGTs                        |
 +----------------------------------+------------------------------------------+
 | class_HGT.csv                    | Class-level HGTs                         |
@@ -142,14 +153,6 @@ Table 1. Output files and descriptions for Kairos derep-detect.
 +----------------------------------+------------------------------------------+
 | kairos_clustering_log.txt        | Log file for clustering steps            |
 +----------------------------------+------------------------------------------+
-
-
-To run derep-detect:
-
-.. code-block:: console
-
-   (.venv) $ nextflow kairos-dd.nf --max_cpus 128 --max_overlap 0.5 --input_contigs input.fasta --taxa_df kairos/taxadf.tsv --outdir output --target_database kairos/deeparg.fasta --MGE_database kairos/mobileOG-db_beatrix-1.6.All.faa
-
 
 Extended Details on Options
 ===============================
