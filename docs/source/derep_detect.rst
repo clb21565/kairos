@@ -1,9 +1,7 @@
 derep-detect
 =====
-Installation
-=====
 
-.. _derep-detect:
+.. _Kairos derep-detect:
 
 hgt-support requires nextflow and several bioinformatics packages. The dependencies can be installed through conda, as in the following command: 
 
