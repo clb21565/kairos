@@ -1,7 +1,7 @@
-Welcome to hgt-support's documentation!
+welcome to kairos' documentation page
 ===================================
 
-**hgt-support** is a lightweight tool for profiling horizontal gene transfer in metagenomic assemblies
+**kairos** is intended to be a lightweight tool for profiling horizontal gene transfer in metagenomic assemblies
 
 .. note::
 
@@ -13,4 +13,5 @@ Contents
 .. toctree::
    
    installation
-   derep-detect
+   Kairos derep-detect
+   Kairos assess
