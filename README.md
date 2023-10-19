@@ -1,27 +1,16 @@
 # Kairos
 
-Kairos is a nextflow pipeline for detecting horizontal gene transfer, distinguishing misassemblies from genuine structural variation, and inferring _in situ_ horizontal gene transfer from metagenomes and assemblies. At present, it has two main workflows:
+Kairos is a nextflow pipeline for detecting horizontal gene transfer, distinguishing misassemblies from genuine structural variation, and inferring _in situ_ horizontal gene transfer from metagenomes and assemblies. At present, it has two workflows: 
 
-***kairos derep-detect***
+**kairos derep-detect:** predicts putative HGTs given contigs, contig taxonomy, an MGE database, and a target gene database
 
-***kairos assess***
+**kairos assess:** sensitively detects the presence of a set of given contigs within user provided samples -- sensitive to microdiversity-level differences in sequence or gene composition 
 
-Currently draft versions of the Kairos derep-detect and Kairos assess workflows are implemented in nextflow.
+**Read the Docs:**
 
-## Kairos derep-detect
+[*Installation* ](https://kairos-hgt.readthedocs.io/en/latest/installation.html)
 
-For a set of contigs, identify identical open reading frames (orfs). Contigs with identical orfs but different taxonomic assignments are putative horizontal gene transfers. Optionally, quantify the number of dereplicated contexts of shared orfs. 
+[*derep-detect*](https://kairos-hgt.readthedocs.io/en/latest/derep_detect.html)
 
-We define putative horizontal gene transfers as contigs with shared genes but different taxonomic assignments. For example, two contigs sharing an idential arg ( $arg_x$ ) would have an HGT under the following conditions: 
+[*assess*](https://kairos-hgt.readthedocs.io/en/latest/assess.html)
 
-User is required to provide taxonomic assignments. I typically use mmseqs taxonomy with gtdb as the underlying taxonomic database.
-
-nextflow kairos-dd.nf --input test.fasta --taxa taxadf.tsv --outdir testrun 
-
-nextflow kairos-asses.nf --input test.fasta --outdir testrun --interleaved_fastq test1.fq.gz test2.fq.gz test3.fq.gz --sample_metadata test_metadata.tsv
-
-Visualization is performed using clinker. Note it becomes difficult to visualize many contigs at once. 
-
-## Kairos assess
-
-For a set of potential hgts or recombination events, determine the presence/absence in metagenomes by aligning to distinguishing boundary regions extracted from contigs.
