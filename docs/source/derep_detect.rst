@@ -119,7 +119,7 @@ inputs to Kairos derep-detect are a fasta file of contigs, a target gene databas
 
 
 Output
-===============================
+-------
 
 Table 1. Output files and descriptions for Kairos derep-detect.
 
