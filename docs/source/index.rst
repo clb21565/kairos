@@ -15,3 +15,4 @@ Contents
    installation
    derep_detect
    assess
+   tutorial: from reads to HGT predictions
