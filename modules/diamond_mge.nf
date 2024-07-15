@@ -12,14 +12,15 @@ process diamond_mge {
 
         """
 
-        source activate hgt_support
+        
 
 
 
-diamond blastp -e ${params.MGE_e} --id ${params.MGE_id} -q ${faa} -d ${params.MGE_database} -k 1 --outfmt 6 qtitle stitle pident bitscore evalue -o ${params.outprefix}.MGE.diamond.tsv
+        diamond blastp -e ${params.MGE_e} --id ${params.MGE_id} -q ${faa} -d ${params.MGE_database} -k 1 --outfmt 6 qtitle stitle pident bitscore evalue -o ${params.outprefix}.MGE.diamond.tsv
 
 
 
         """
 
 }
+//source activate hgt_support

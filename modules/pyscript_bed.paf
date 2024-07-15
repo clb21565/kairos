@@ -1,0 +1,13 @@
+process pyscri {
+	publishDir "${params.outdir}"
+	input:
+	file py
+	file paf
+	val prefix
+	output:
+	path '*',		emit:bed
+	"""
+	source activate hgt_support
+	python ${py} --inpaf ${paf} --out_prefix ${prefix} --extension_length 75
+	"""
+}

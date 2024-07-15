@@ -9,7 +9,8 @@ process support_derep {
 	path '*_deduplicated_overlaps.tsv',	emit:dd
 	path '*_redundant_overlaps.tsv',	emit:rd	
 	"""
-	source activate hgt_support
+	
 	python $script --max_overlap ${params.max_overlap} --input_clust_file $tsv --out_prefix $prefix
 	"""
 }
+//source activate hgt_support

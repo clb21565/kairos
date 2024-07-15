@@ -10,10 +10,11 @@ process detect {
 	output:
 	path '*',		emit:outpre 
 	"""
-	source activate hgt_support
+	
 
-python $script --MGE_dmnd $mge_tsv --target_dmnd $target_tsv --overlap_results $nonredundant_overlaps --overlap_results_red $redundant_overlaps --out_prefix ${params.outprefix} --taxa_df ${params.taxa_df} --min_orfs_in_contig ${params.min_orfs}
+	python $script --MGE_dmnd $mge_tsv --target_dmnd $target_tsv --overlap_results $nonredundant_overlaps --overlap_results_red $redundant_overlaps --out_prefix ${params.outprefix} --taxa_df ${params.taxa_df} --min_orfs_in_contig ${params.min_orfs}
 
 
 	"""
 }
+//source activate hgt_support

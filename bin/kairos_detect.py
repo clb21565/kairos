@@ -56,6 +56,9 @@ merged=pd.concat([nonredundant,redundant])
 nhgt=pd.merge(merged,taxa,left_on="contig1",right_on="contig")
 nhgt=pd.merge(nhgt,taxa,left_on="contig2",right_on="contig",suffixes=["_contig1","_contig2"])
 
+#target_dmnd_out.to_csv("target_dmnd.csv")
+#close_enough.to_csv("close_enough.csv")
+#mge_dmnd_out.to_csv("mge_dmnd_out.csv")
 
 def writeHGTdf(lvl,min_orfs):
 	lvltigstr1=lvl+"_contig1"
@@ -63,6 +66,9 @@ def writeHGTdf(lvl,min_orfs):
 
 	hgt=nhgt[(nhgt[lvltigstr1]!=nhgt[lvltigstr2]) & (nhgt[lvltigstr1]!=None) & (nhgt[lvltigstr2]!=None) & (nhgt["smallest_contig_orfCts"] > min_orfs)]
 	hgt=hgt[(hgt[lvltigstr1].notna())&(hgt[lvltigstr2].notna())]
+	hgt["identical_orf_contig1"] = hgt["contig1"]+"_"+hgt["identical_orf_position_contig1"].astype(str)
+	hgt["identical_orf_contig2"] = hgt["contig2"]+"_"+hgt["identical_orf_position_contig2"].astype(str)
+	
 	print(len(hgt))
 	if len(hgt) == 0:
 
@@ -73,10 +79,10 @@ def writeHGTdf(lvl,min_orfs):
 
 	else: 
 
-		HGT_df=hgt[["contig1","contig2",lvltigstr1,lvltigstr2,"lineage_contig1","lineage_contig2","identical_orf_position_contig1","identical_orf_position_contig2"]].drop_duplicates()
-		HGT_df['mobile_target_gene']=np.where((HGT_df['identical_orf_position_contig1'].isin(close_enough["Contig/ORF Name_target"])) | ((HGT_df['identical_orf_position_contig2'].isin(close_enough["Contig/ORF Name_target"]))), 1,0)
-		HGT_df['mge_hgt']=np.where((HGT_df['identical_orf_position_contig1'].isin(mge_dmnd_out["Contig/ORF Name"])) | ((HGT_df['identical_orf_position_contig2'].isin(mge_dmnd_out["Contig/ORF Name"]))), 1,0)
-		HGT_df['target_hgt']=np.where((HGT_df['identical_orf_position_contig1'].isin(target_dmnd_out["Contig/ORF Name"])) | ((HGT_df['identical_orf_position_contig2'].isin(target_dmnd_out["Contig/ORF Name"]))), 1,0)
+		HGT_df=hgt[["contig1","contig2",lvltigstr1,lvltigstr2,"lineage_contig1","lineage_contig2","identical_orf_contig1","identical_orf_contig2"]].drop_duplicates()
+		HGT_df['mobile_target_gene']=np.where((HGT_df['identical_orf_contig1'].isin(close_enough["Contig/ORF Name_target"])) | ((HGT_df['identical_orf_contig2'].isin(close_enough["Contig/ORF Name_target"]))), 1,0)
+		HGT_df['mge_hgt']=np.where((HGT_df['identical_orf_contig1'].isin(mge_dmnd_out["Contig/ORF Name"])) | ((HGT_df['identical_orf_contig2'].isin(mge_dmnd_out["Contig/ORF Name"]))), 1,0)
+		HGT_df['target_hgt']=np.where((HGT_df['identical_orf_contig1'].isin(target_dmnd_out["Contig/ORF Name"])) | ((HGT_df['identical_orf_contig2'].isin(target_dmnd_out["Contig/ORF Name"]))), 1,0)
 	
 		outstr=str("{}-level HGTs predicted".format(lvl))
 	

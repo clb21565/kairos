@@ -13,7 +13,7 @@ def getExtensionRegions(pafdf,EDGELEN,outprefix):
 	pafdf=pd.read_csv(pafdf,sep="\t",header=None)
 	pafdf.columns=["contiga","a_len","a_start","a_end","strand","contigb","b_len","b_start","b_end","nmatch","alen","mapq"]
 	pafdf=pafdf[pafdf["alen"]>1000]
-	pafdf=pafdf[pafdf["nmatch"]>=0.50*pafdf["alen"]]
+	#pafdf=pafdf[pafdf["nmatch"]>=0.95*pafdf["alen"]]
 
 	pafdf["a_END_END"]=pafdf["a_end"]-EDGELEN
 	pafdf["a_END_START"]=pafdf["a_end"]+EDGELEN
@@ -43,8 +43,8 @@ def getExtensionRegions(pafdf,EDGELEN,outprefix):
 	b1_out.columns=["rownum","contig","start","end"]
 	a2_out.columns=["rownum","contig","start","end"]
 	b2_out.columns=["rownum","contig","start","end"]
-
+	tp=pd.concat([a1_out,b1_out,a2_out,b2_out],axis=0)
 	dds=tp[["contig","start","end"]].drop_duplicates()
 	dds.to_csv("{}.comparisons.bed".format(outprefix),sep="\t",index=False,header=None)
 	
-getExtensionRegions(args.inpaf,args.window_length,args.out_prefix)
+getExtensionRegions(args.inpaf,args.extension_length,args.out_prefix)
