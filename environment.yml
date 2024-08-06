@@ -1,0 +1,16 @@
+name: kairos
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12.2
+  - nextflow=24.04.2
+  - blast=2.15.0
+  - minimap2=2.27
+  - diamond=2.1.9
+  - samtools=1.19.2
+  - bedtools=2.31.1
+  - salmon=1.10.3
+  - prodigal=2.6.3
+  - mmseqs2=13.45111
+  - pandas
