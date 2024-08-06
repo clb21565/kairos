@@ -3,25 +3,10 @@ Installation
 
 .. _installation:
 
-Kairos requires nextflow and several bioinformatics packages. The dependencies can be installed through conda, as in the following command: 
+Kairos requires nextflow and several bioinformatics packages. The dependencies can be installed through mamba (or conda), as in the following command: 
 
-kairos (main environment)
+   $ mamba create -n kairos mmseqs2 blast pandas samtools bedtools minimap2 salmon 
 
-   diamond 
+Kairos has been developed using nextflow version 24.04.3.5916. Installation instructions for nextflow can be found `here`_. 
 
-   mmseqs2
-
-   minimap2
-
-   samtools
-
-   bedtools
-
-   python3/pandas
-
-kairos-assess
-
-   salmon 
-
-   $ conda create -n hgt_support -c bioconda pandas hgt_support
-   $ conda activate hgt_support
+.. _here: https://www.nextflow.io/docs/latest/install.html
