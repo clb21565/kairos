@@ -6,8 +6,11 @@ process coverage {
 	path '*.coverage.tsv',		emit: cov_df
 	path '*',			emit: x
 	"""
-	
-	samtools coverage ${bam} > ${bam}.coverage.tsv
+	for bam_file in ${bam}; do
+        base=\$(basename \${bam_file} .bam)
+        samtools coverage \${bam_file} > \${base}.coverage.tsv
+    done
 	"""
 }
 //source activate hgt_support
+//samtools coverage ${bam} > ${bam}.coverage.tsv
