@@ -12,4 +12,4 @@ outdir='user-selected out directory'
 target_db='absolute path/to/targetdb.fna'
 mge_db='absolute path/to/mge_db.fna'
 
-nextflow kairos-dd-haoqiu2.nf --max_cpus 128 --max_overlap 0.5 --input_contigs $input_contigs --taxa_df $taxa_df --outdir $outdir --target_database $target_db --MGE_database $mge_db --num_chunks 16
+nextflow kairos-dd.nf --max_cpus 128 --max_overlap 0.5 --input_contigs $input_contigs --taxa_df $taxa_df --outdir $outdir --target_database $target_db --MGE_database $mge_db --num_chunks 16
