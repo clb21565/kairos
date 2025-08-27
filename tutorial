@@ -1,0 +1,21 @@
+This is a tutorial of using Kairos on a publicly available dataset.It will be broken into 3 parts: preprocessing, the derep-detect workflow, and the assess workflow. We will be using the activated sludge metagenome raw sequence reads from “Successional dynamics and alternative stable states in a saline activated sludge microbial community over 9 years”. The reads are in the NCBI database under project ID PRJNA432264.
+
+Preprocessing
+      Using fasterq-dump, we download our reads
+            fasterq-dump SRR23493587
+          	fasterq-dump SRR23493588
+          	fasterq-dump SRR23493589
+         	  fasterq-dump SRR23493590
+          	fasterq-dump SRR23493591
+      Assemble contigs using metaSPAdes
+            for sample in "${Samples}";do
+                  spades.py --meta -1 $(sample)_1.fastq -2 $(sample)_2.fastq --only-assembler -o $(sample)__contigs 
+            done
+      Assign contig taxonomy using mmseqs and a GTDB database
+            mmseqs createdb *_contigs.fasta sequenceDB
+            mmseqs createtaxdb sequenceDB tmp --ncbi-tax-dump ncbi-taxdump --tax-mapping-file taxidmapping
+            mmseqs easy-taxonomy sequenceDB targetDB alnRes tmp_results --lca-mode <mode>
+derep-detect
+      nextflow kairos-dd.nf --max_cpus 128 --max_overlap 0.5 --input_contigs input.fasta --taxa_df taxadf.tsv --outdir output --target_database ${database_dir_path}/deeparg.fasta --MGE_database ${database_dir_path}/mobileOG-db_beatrix-1.6.All.faa --num_chunks 128
+asess
+      nextflow kairos-assess.nf --input_contigs $contigs --input_reads   $samples --outdir test --outprefix test
