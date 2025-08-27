@@ -5,7 +5,7 @@ Preprocessing
             fasterq-dump SRR23493587
           	fasterq-dump SRR23493588
           	fasterq-dump SRR23493589
-         	  fasterq-dump SRR23493590
+         	fasterq-dump SRR23493590
           	fasterq-dump SRR23493591
       Assemble contigs using metaSPAdes
             for sample in "${Samples}";do
